@@ -1,0 +1,65 @@
+:root {
+    color-scheme: light;
+    font: 16px/1.5 system-ui, sans-serif;
+    background: #eef2f8;
+    color: #17243b;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 860px; padding: 2rem 1rem; margin: auto; }
+header, .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .75rem;
+}
+h1 { margin: 0; font-size: clamp(1.8rem, 5vw, 2.7rem); }
+.eyebrow { color: #2857a1; font-size: .75rem; font-weight: 750; letter-spacing: .08em; margin: 0; }
+.intro, .note { color: #475872; }
+form, article { background: white; border: 1px solid #d5deeb; border-radius: .9rem; padding: 1rem; }
+article { margin: .75rem 0; }
+article.user { background: #e2edff; }
+article p, pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+article p { margin: .35rem 0 0; }
+label { display: block; font-weight: 650; }
+label small { font-weight: 400; }
+textarea {
+    width: 100%;
+    resize: vertical;
+    border: 1px solid #8295b0;
+    padding: .65rem;
+    border-radius: .45rem;
+    margin: .35rem 0 0;
+}
+textarea, button, input { font: inherit; }
+.prompt-help {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: .25rem .75rem;
+    color: #475872;
+    font-size: .85rem;
+    margin-bottom: .7rem;
+}
+.over-limit { color: #9c2525; font-weight: 650; }
+input[type="file"] { max-width: 100%; }
+button {
+    color: white;
+    background: #204e9a;
+    border: 1px solid #204e9a;
+    padding: .5rem .9rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-weight: 650;
+}
+button.secondary { color: #204e9a; background: white; }
+button:disabled { opacity: .6; cursor: wait; }
+details { margin-top: .75rem; }
+summary { cursor: pointer; color: #204e9a; }
+pre { max-height: 22rem; overflow: auto; padding: .75rem; background: #eef2f8; }
+.note { font-size: .85rem; margin-bottom: 0; }
+#status:empty, #error:empty { display: none; }
+#error { color: #9c2525; }
+.warning { color: #875000; }

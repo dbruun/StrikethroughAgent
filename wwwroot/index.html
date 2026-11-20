@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PDF Review Chat</title>
+  <link rel="stylesheet" href="chat.css">
+  <script src="chat.js?v=agentic-3" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <p class="eyebrow">CONTENT UNDERSTANDING + MICROSOFT FOUNDRY</p>
+        <h1>PDF Review Chat</h1>
+      </div>
+      <button id="reset" type="button" class="secondary">New chat</button>
+    </header>
+    <p class="intro">Attach a PDF and ask about its contents, including edits and struck-through text.</p>
+    <section id="messages" role="log" aria-label="Conversation"></section>
+    <form id="chat">
+      <label for="prompt">Message</label>
+      <textarea id="prompt" name="prompt" rows="14" required aria-describedby="prompt-help"
+        placeholder="What changed in this document?"></textarea>
+      <div id="prompt-help" class="prompt-help">
+        <span>Drag the corner to resize the editor.</span>
+        <span id="prompt-count">0 / 100,000 characters</span>
+      </div>
+      <div class="actions">
+        <div>
+          <label for="pdf">PDF attachment <small>(optional, up to 20 MiB)</small></label>
+          <input type="file" id="pdf" accept=".pdf,application/pdf">
+        </div>
+        <button id="send" type="submit">Send message</button>
+      </div>
+      <p class="note">Sending a new PDF starts a new chat. The file goes to Azure Content Understanding;
+        the extracted text and your prompt go to StrikethroughAgent in Microsoft Foundry.</p>
+      <p id="status" role="status"></p>
+      <p id="error" role="alert"></p>
+    </form>
+  </main>
+</body>
+</html>

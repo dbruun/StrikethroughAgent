@@ -1,0 +1,19 @@
+{
+  "description": "Locate visual legislative redlines, including marks drawn as page graphics.",
+  "baseAnalyzerId": "prebuilt-document",
+  "models": {
+    "completion": "prebuilt-analyzer-completion"
+  },
+  "config": {
+    "workflow": "agentic"
+  },
+  "fieldSchema": {
+    "fields": {
+      "RedlineReport": {
+        "type": "string",
+        "method": "generate",
+        "description": "Inspect the rendered appearance of every page, including pages with no PDF annotation objects. Locate all visually marked legislative text. A horizontal rule through the body of the characters marks a deletion; a rule below the text baseline marks an underlined addition. Do not rely on OCR or the PDF text layer to classify a mark. Do not classify text by its meaning or infer edits from nearby wording. Ignore table rules, section separators, and boilerplate coding legends. Return one entry per contiguous marked span with the physical PDF page (one-based), printed line number or range if visible, mark type (strikethrough, underline, or uncertain), and exact visibly marked words and punctuation, excluding neighboring unmarked text. Inspect each page independently and explicitly list pages inspected, including pages on which no marks were detected. If any page or mark cannot be verified visually, say so instead of claiming there are no edits."
+      }
+    }
+  }
+}
